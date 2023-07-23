@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const database = 'mongodb+srv://rosyad:radongblas@aset-persa.w3ehc38.mongodb.net/?retryWrites=true&w=majority';
+const database = 'mongodb://0.0.0.0:27017/asetDB';
 
 async function connectMongo() {
     await mongoose.connect(database, {

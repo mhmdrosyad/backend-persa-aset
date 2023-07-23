@@ -20,6 +20,24 @@ const schema = buildSchema(`
         price: String!
     }
 
+    type User {
+        id: ID!,
+        username: String!,
+        email: String!,
+        password: String!,
+    }
+
+    type AuthPayLoad {
+        token: String!,
+        user: User!
+    }
+
+    input NewUser {
+        username: String!,
+        email: String!,
+        password: String!,
+    }
+
     type Rent {
         id: ID!,
         nama: String!,
@@ -58,6 +76,8 @@ const schema = buildSchema(`
         getAset(slug: String!): Aset
         getRents: [Rent!]!
         getRent(id: ID!): Rent
+        getUsers: [User!]!
+        getUser(id: ID!): User
     }
 
     type Mutation {
@@ -66,6 +86,9 @@ const schema = buildSchema(`
         deleteAset(id: ID!): ID!
         newRent(input: NewRent): Rent
         resolved(id: ID!): Rent
+        register(input: NewUser): User
+        login(username: String!, password: String!): AuthPayLoad!
+        checkToken(token: String!): Boolean!
     }
 `);
 

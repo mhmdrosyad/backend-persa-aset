@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 
-const connectMongo = require('./utils/dbconnect');
-const { asetGql, userGql } = require('./handler');
+const connectMongo = require('./api/utils/dbconnect');
+const { apiGql } = require('./api/graphql/handler');
 
 // db connection
 connectMongo().then(() => console.log('MongoDB Connected...')).catch(err => console.log(err));
@@ -16,8 +16,7 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.use('/api', asetGql);
-app.use('/user', userGql);
+app.use('/api', apiGql);
 
 const port = process.env.PORT || 3000;
 
