@@ -6,7 +6,7 @@ const connectMongo = require('./api/utils/dbconnect');
 const { apiGql } = require('./api/graphql/handler');
 
 // db connection
-connectMongo().then(() => console.log('MongoDB Connected...')).catch(err => console.log(err));
+// connectMongo().then(() => console.log('MongoDB Connected...')).catch(err => console.log(err));
 
 // express js
 const app = express();
@@ -17,7 +17,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use('/api', apiGql);
-
+app.get('/hello', (req, res) => {
+    res.send('Hello, World!');
+  });
+  
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
