@@ -25,4 +25,4 @@ app.listen(port, () => {
     console.log(`Server listening on port: ${port}`)
 });
 
-console.log('Running a GraphQL API server at http://localhost:5000/api');
+console.log(`Running a GraphQL API server at http://localhost:${port}/api`);
