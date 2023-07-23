@@ -19,8 +19,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use('/api', asetGql);
 app.use('/user', userGql);
 
-app.listen(5000, () => {
-    console.log("Server listening on port: 5000")
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Server listening on port: ${port}`)
 });
 
 console.log('Running a GraphQL API server at http://localhost:5000/api');
