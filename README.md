@@ -1,5 +1,5 @@
 # backend-persa-aset
-END POINT API for [ASET MANAGEMENT PERSA](https://persa.my.id/aset)
+END POINT API for [ASET MANAGEMENT PERSA](https://github.com/mhmdrosyad/aset-persa-nextjs)
 
 using NPM
 
