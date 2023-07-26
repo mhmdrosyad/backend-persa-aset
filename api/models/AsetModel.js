@@ -7,7 +7,7 @@ const asetSchema = new mongoose.Schema({
     stock: Number,
     note: String,
     price: String
-});
+}, { collection: "asets" });
 
 const AsetModel = mongoose.model('Aset', asetSchema);
 
